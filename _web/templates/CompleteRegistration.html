@@ -1,0 +1,87 @@
+{% extends "Dashboard.html" %}
+{% block title %} Complete Registration - MyFXTM Dashboard {% endblock %}
+
+{% block complete_reg %} {% endblock %}
+
+{% block maincontent %}
+
+	<h1 style="font-size: 50px; margin-left: 10px;">Identity Verification</h1>
+	<div class="sub-main" style="width: 90%; display: flex; align-items: center; justify-content: space-between;">
+		<div class="left" style="margin-left: 10px;">
+			<div class="board-box">
+				<h2>Upload BVN</h2>
+				<hr>
+				<p>Please upload a copy of your Bank Verification Number which would be used to verify your identity.</p>
+				<br>
+				{% if 1 not in PythonEval(CUser['verify_docs']) %}
+					<form action="/upload-document/bvn">
+						<!-- <p></p> -->
+						<input type="file" style="outline: none; background: #f9f9f9; padding: 10px; margin: 10px; border-radius: 10px;" name="bvn">
+						<button>Upload Bank Verification Number</button>
+					</form>
+				{% else %}
+					<p style="color: grey; display: flex; align-items: center; justify-content: space-around; width: fit-content;"><img src="../static/media/images/info-icon.png" style="margin: 10px; aspect-ratio: 1/1; width: 30px; border-radius: 10pc;"> BVN Verification in progress.</p>
+				{% endif %}
+				<br>
+				<br>
+			</div>
+			<br>
+			<div class="board-box">
+				<h2>Upload National Identity Document</h2>
+				<hr>
+				<p>Please upload a copy of your National Identity Document e.g. Driver's License, National Identity, Voter's Card e.t.c. which would be used as a verification medium to verify your identity.</p>
+				<br>
+				{% if 2 not in PythonEval(CUser['verify_docs']) %}
+					<form action="/upload-document/nid">
+						<!-- <p></p> -->
+						<input type="file" style="outline: none; background: #f9f9f9; padding: 10px; margin: 10px; border-radius: 10px;" name="nid">
+						<button  style="background: rgb(41 227 135);">Upload National Identity Document</button>
+					</form>
+				{% else %}
+					<p style="color: grey; display: flex; align-items: center; justify-content: space-around; width: fit-content;"><img src="../static/media/images/info-icon.png" style="margin: 10px; aspect-ratio: 1/1; width: 30px; border-radius: 10pc;"> National Identity Document Verification in progress.</p>
+				{% endif %}
+				<br>
+				<br>
+			</div>
+		</div>
+		<div class="right">
+			
+			<div class="board-box">
+				<h2>Upload Passport</h2>
+				<hr>
+				<p>Please upload a selfie of you which would be used to verify your identity.</p>
+				<br>
+				{% if 3 not in PythonEval(CUser['verify_docs']) %}
+					<form action="/upload-document/pp">
+						<!-- <p></p> -->
+						<input type="file" style="outline: none; background: #f9f9f9; padding: 10px; margin: 10px; border-radius: 10px;" name="pp">
+						<button>Upload Passport</button>
+					</form>
+				{% else %}
+					<p style="color: grey; display: flex; align-items: center; justify-content: space-around; width: fit-content;"><img src="../static/media/images/info-icon.png" style="margin: 10px; aspect-ratio: 1/1; width: 30px; border-radius: 10pc;"> Passport Verification in progress.</p>
+				{% endif %}
+				<br>
+				<br>
+			</div>
+			<br>
+			<div class="board-box">
+				<h2>Upload Utility Bill</h2>
+				<hr>
+				<p>Please upload a copy of a utility bill e.g. Electricity bill, Water Bill, Gas Bill, Tax Bill which would be used as a verification medium to verify your identity.</p>
+				<!-- <br> -->
+				{% if 4 not in PythonEval(CUser['verify_docs']) %}
+					<form action="/upload-document/utb">
+						<!-- <p>/</p> -->
+						<input type="file" style="outline: none; background: #f9f9f9; padding: 10px; margin: 10px; border-radius: 10px;" name="utb">
+						<button>Upload Utility Bill</button>
+					</form>
+				{% else %}
+					<p style="color: grey; display: flex; align-items: center; justify-content: space-around; width: fit-content;"><img src="../static/media/images/info-icon.png" style="margin: 10px; aspect-ratio: 1/1; width: 30px; border-radius: 10pc;"> Utility Bill Verification in progress.</p>
+				{% endif %}
+				<br>
+				<br>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

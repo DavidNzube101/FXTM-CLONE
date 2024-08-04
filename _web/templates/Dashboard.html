@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %} MyFXTM Dashboard {% endblock %} </title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard-stylesheet.css') }}">
+</head>
+<body>
+	{% if DeviceType == 'Mobile' %}
+
+	{% else %}
+
+		<section class="board">
+			<nav>
+				<a href="/dashboard">
+					<img src="../static/media/images/logo-text-2.png">
+				</a>
+
+				<div class="nav-dropdown-container">
+					<a href="/dashboard" style="text-decoration: none;">
+						<div class="nav-dropdown">
+							<div>
+								<p>Home</p>
+								<img src="../static/media/images/dark-box.png">
+							</div>
+						</div>
+					</a>
+
+					<div class="nav-dropdown" id="nav-dropdown1" onclick="dropdownFunction('#nav-dropdown1', '#nav-dropdown-icon1', '#nav-dropdown-content1');">
+
+						<div>
+							<p>My Accounts</p>
+							<img src="../static/media/images/arrow-down.png" class="nav-dropdown-icon" id="nav-dropdown-icon1">
+						</div>
+						<article class="nav-dropdown-content" id="nav-dropdown-content1">
+							<a href="/deposit-funds">
+								<p>Deposit funds</p>
+								<img src="../static/media/images/arrow-right.png">
+							</a>
+							<a href="/withdraw-funds">
+								<p>Withdraw funds</p>
+								<img src="../static/media/images/arrow-right.png">
+							</a>
+							<a href="/my-fxtm-wallet">
+								<p>FXTM Wallets</p>
+								<img src="../static/media/images/arrow-right.png">
+							</a>
+							<a href="/internal-transfers">
+								<p>Internal transfers</p>
+								<img src="../static/media/images/arrow-right.png">
+							</a>
+							<a href="/transaction-history">
+								<p>Transaction history</p>
+								<img src="../static/media/images/arrow-right.png">
+							</a>
+							<a href="/dashboard">
+								<p>Conversion rates</p>
+								<img src="../static/media/images/arrow-right.png">
+							</a>
+						</article>
+					</div>
+					<div class="nav-dropdown" id="nav-dropdown2" onclick="dropdownFunction('#nav-dropdown2', '#nav-dropdown-icon2', '#nav-dropdown-content2');">
+						<div>
+							<p>My Money</p>
+							<img src="../static/media/images/arrow-down.png" class="nav-dropdown-icon" id="nav-dropdown-icon2">
+						</div>
+						<article class="nav-dropdown-content" id="nav-dropdown-content2">
+							<a href="/my-fxtm-wallet">
+								<p>FXTM Wallets</p>
+								<img src="../static/media/images/arrow-right.png">
+							</a>
+							<a href="/transaction-history">
+								<p>Transaction history</p>
+								<img src="../static/media/images/arrow-right.png">
+							</a>
+						</article>
+					</div>
+					<div class="nav-dropdown" id="nav-dropdown3" onclick="dropdownFunction('#nav-dropdown3', '#nav-dropdown-icon3', '#nav-dropdown-content3');">
+						<div>
+							<p>My Platform</p>
+							<img src="../static/media/images/arrow-down.png" class="nav-dropdown-icon" id="nav-dropdown-icon3">
+						</div>
+						<article class="nav-dropdown-content" id="nav-dropdown-content3">
+							<a href="/dashboard">
+								<p>Conversion rates</p>
+								<img src="../static/media/images/arrow-right.png">
+							</a>
+						</article>
+					</div>
+					<div class="nav-dropdown">
+						<div>
+							<p>FXTM Invest</p>
+							<img src="../static/media/images/dark-box.png">
+						</div>
+					</div>
+					<div class="nav-dropdown" id="nav-dropdown4" onclick="dropdownFunction('#nav-dropdown4', '#nav-dropdown-icon4', '#nav-dropdown-content4');">
+						<div>
+							<p>My Documents</p>
+							<img src="../static/media/images/arrow-down.png" class="nav-dropdown-icon" id="nav-dropdown-icon4">
+						</div>
+						<article class="nav-dropdown-content" id="nav-dropdown-content4">
+							documents
+						</article>
+					</div>
+					<div class="nav-dropdown" id="nav-dropdown5" onclick="dropdownFunction('#nav-dropdown5', '#nav-dropdown-icon5', '#nav-dropdown-content5');">
+						<div>
+							<p>My Profile</p>
+							<img src="../static/media/images/arrow-down.png" class="nav-dropdown-icon" id="nav-dropdown-icon5">
+						</div>
+						<article class="nav-dropdown-content" id="nav-dropdown-content5">
+							profile
+						</article>
+					</div>
+					<div class="nav-dropdown" id="nav-dropdown8" onclick="dropdownFunction('#nav-dropdown8', '#nav-dropdown-icon8', '#nav-dropdown-content8');">
+						<div>
+							<p>Trading Service</p>
+							<img src="../static/media/images/arrow-down.png" class="nav-dropdown-icon" id="nav-dropdown-icon8">
+						</div>
+						<article class="nav-dropdown-content" id="nav-dropdown-content8">
+							trading
+						</article>
+					</div>
+					<div class="nav-dropdown">
+						<div>
+							<p>Stock Trading</p>
+							<img src="../static/media/images/dark-box.png">
+						</div>
+					</div>
+					<div class="nav-dropdown" id="nav-dropdown6" onclick="dropdownFunction('#nav-dropdown6', '#nav-dropdown-icon6', '#nav-dropdown-content6');">
+						<div>
+							<p>Promotion & Contest</p>
+							<img src="../static/media/images/arrow-down.png" class="nav-dropdown-icon" id="nav-dropdown-icon6">
+						</div>
+						<article class="nav-dropdown-content" id="nav-dropdown-content6">
+							promotion
+						</article>
+					</div>
+					<div class="nav-dropdown" id="nav-dropdown7" onclick="dropdownFunction('#nav-dropdown7', '#nav-dropdown-icon7', '#nav-dropdown-content7');">
+						<div>
+							<p>Education</p>
+							<img src="../static/media/images/arrow-down.png" class="nav-dropdown-icon" id="nav-dropdown-icon7">
+						</div>
+						<article class="nav-dropdown-content" id="nav-dropdown-content7">
+							education
+						</article>
+					</div>
+					<div class="nav-dropdown" id="nav-dropdown9" onclick="dropdownFunction('#nav-dropdown9', '#nav-dropdown-icon9', '#nav-dropdown-content9');">
+						<div>
+							<p>Client Support</p>
+							<img src="../static/media/images/arrow-down.png" class="nav-dropdown-icon" id="nav-dropdown-icon9">
+						</div>
+						<article class="nav-dropdown-content" id="nav-dropdown-content9">
+							client support
+						</article>
+					</div>
+					
+
+				</div>
+			</nav>
+			<script type="text/javascript">
+				const nav_dropdown = document.querySelectorAll(".nav-dropdown")
+				const nav_dropdown_icon = document.querySelectorAll(".nav-dropdown-icon")
+
+				function dropdownFunction(dropdown_trigger, down_icon, dropdown_content) {
+					document.querySelector(dropdown_trigger).addEventListener("click", ()=>{
+						if (document.querySelector(down_icon).style.transform == "rotate(180deg)") {
+							document.querySelector(down_icon).style.transform = "rotate(0deg)"
+							document.querySelector(dropdown_content).style.display = "none" 
+						} else {
+							document.querySelector(down_icon).style.transform = "rotate(180deg)"
+							document.querySelector(dropdown_content).style.display = "block" 
+						}
+					})
+				}
+			</script>
+			
+			<div class="main">
+				<header>
+					<button style="border: 3px solid rgb(41 227 135); font-weight: 700; color: rgb(41 227 135); padding: 10px; border-radius: 10pc; outline: none; background: transparent; padding-left: 20px; padding-right: 20px; cursor: pointer;">Get $50</button>
+
+					<div style="display: flex; align-items: center; justify-content: space-around;">
+						<img src="../static/media/images/bell.png" style="margin-left: 10px; margin-right: 10px; cursor: pointer;">
+						<img src="../static/media/images/mail.png" style="margin-left: 10px; margin-right: 10px; cursor: pointer;">
+						<img src="../static/media/images/contact.png" style="margin-left: 10px; margin-right: 10px; cursor: pointer;">
+						<div style="margin-left: 10px; margin-right: 10px;">
+							<h1 style="color: white; font-family: 'Source Sans 3' sans-serif;">MyFXTM ID: {{ CUser['fxtm_id'] }} </h1>
+						</div>
+						<div class="nav-dropdown" style="margin-left: 10px; margin-right: 10px;" id="nav-dropdown10" onclick="dropdownFunction('#nav-dropdown10', '#nav-dropdown-icon10', '#nav-dropdown-content10');">
+							
+							<div>
+								<p>English</p>
+								<img src="../static/media/images/arrow-down.png" class="nav-dropdown-icon" id="nav-dropdown-icon10">
+								
+							</div>
+							<article class="nav-dropdown-content" id="nav-dropdown-content10">
+								<div class="nav-dropdown">Spanish</div>
+								<div class="nav-dropdown">French</div>
+								<div class="nav-dropdown">Italian</div>
+							</article>
+							
+						</div>
+						<a href="/logout">
+							<img src="../static/media/images/logout.png" style="margin-left: 10px; margin-right: 10px; cursor: pointer;">
+						</a>
+					</div>
+				</header>
+
+				{% block complete_reg %}
+					{% if CUser['is_verified'] == "False" %}
+						<div style="background: rgb(219 239 255); width: 90%; height: fit-content; border-radius: 3px; display: flex; flex-direction: row; padding: 10px; margin: 10px;">
+							<div>
+								<h1 style="font-size: 40px;">Just a few more steps</h1>
+								<p style="font-size: 30px;">For full access to all MyFXTM features, please complete registration. Once you do that, you'll just need to verify your profile with some documents.</p>
+								<a href="/complete-registration">
+									<button class="info-button">Complete Registration</button>
+								</a>
+							</div>
+							<img style="aspect-ratio: 1/1; width: 600px;" src="../static/media/images/info-icon.png">
+						</div>
+					{% else %}
+						{{ pass }}
+					{% endif %}
+				{% endblock %}
+
+				{% block maincontent %}
+					<h1 style="font-size: 50px; margin-left: 10px;">Dashboard</h1>
+					<div class="sub-main" style="width: 90%; display: flex; align-items: center; justify-content: space-between;">
+						<div class="left" style="margin-left: 10px;">
+							<div class="board-box">
+								<h2>My Trading Accounts</h2>
+								<hr>
+								<p>Open a live trading account and start trading forex, metals, commodities and CFD's today.</p>
+								<br>
+								<a href="/my-trading-accounts">
+									<button>Open trading account</button>
+								</a>
+								<br>
+								<br>
+							</div>
+							<br>
+							<div class="board-box">
+								<h2>My Investment Accounts</h2>
+								<hr>
+								<p>Start invetsing today with FXTM Invest. Get a full list of our Strategy Accounts in the <a href="/">ranking page</a>, learn more about program <a href="/">here</a> or take a look at our <a href="/">FAQs</a>.</p>
+								<br>
+								<button style="background: rgb(41 227 135);">Open investment account</button>
+								<br>
+								<br>
+							</div>
+							<br>
+							<h2>FXTM Invest: Top Strategy Accounts <button class="orange-button">View all Strategy<br>Providers</button></h2>
+							<br>
+							<div class="strategy-account">
+								<div class="sta-upper">
+									<div class="sta-profile-pic"></div>
+									<h3><b>N3wstyl87</b></h3>
+								</div>
+								<div class="sta-lower">
+									<div class="sta-lower-sub">
+										<h3>2978.70</h3>
+										<p>Return rate%</p>
+									</div>
+									<div class="vertical-seperator"></div>
+									<div class="sta-lower-sub">
+										<h3>237</h3>
+										<p>Investors</p>
+									</div>
+									<div class="vertical-seperator"></div>
+									<div class="sta-lower-sub">
+										<h3>170K</h3>
+										<p>Managed Funds($)</p>
+									</div>
+								</div>
+							</div>
+							<div class="strategy-account">
+								<div class="sta-upper">
+									<div class="sta-profile-pic" style="background: linear-gradient(118deg, #f9f9f9, gold);"></div>
+									<h3><b>Retire-Young</b></h3>
+								</div>
+								<div class="sta-lower">
+									<div class="sta-lower-sub">
+										<h3>412.99</h3>
+										<p>Return rate%</p>
+									</div>
+									<div class="vertical-seperator"></div>
+									<div class="sta-lower-sub">
+										<h3>24</h3>
+										<p>Investors</p>
+									</div>
+									<div class="vertical-seperator"></div>
+									<div class="sta-lower-sub">
+										<h3>10K</h3>
+										<p>Managed Funds($)</p>
+									</div>
+								</div>
+							</div>
+							<div class="strategy-account">
+								<div class="sta-upper">
+									<div class="sta-profile-pic" style="background: linear-gradient(to top, yellow, green);"></div>
+									<h3><b>Gotham_mane</b></h3>
+								</div>
+								<div class="sta-lower">
+									<div class="sta-lower-sub">
+										<h3>315.98</h3>
+										<p>Return rate%</p>
+									</div>
+									<div class="vertical-seperator"></div>
+									<div class="sta-lower-sub">
+										<h3>9</h3>
+										<p>Investors</p>
+									</div>
+									<div class="vertical-seperator"></div>
+									<div class="sta-lower-sub">
+										<h3>&lt;10K</h3>
+										<p>Managed Funds($)</p>
+									</div>
+								</div>
+							</div>
+
+							<button class="orange-button">Open Strategy Account</button>
+						</div>
+						<div class="right">
+							<div class="ad-card">
+								<img src="../static/media/images/ad1.png">
+							</div>
+							<br>
+							<div class="board-box">
+								<h2>Upcoming events</h2>
+								<hr>
+								<p>Introduction to the financial markets.</p>
+								<p><b>Seminar 10:00 AM West Central Africa</b></p>
+								<br>
+								<div style="display: flex; align-items: center; justify-content: space-around;">
+									<button>View all webinars</button>
+									<button>View all seminars</button>
+								</div>
+								<br>
+								<br>
+							</div>
+							<br>
+							<div class="board-box">
+								<h2>Spread the Word about FXTM & Earn up to $10,000</h2>
+								<hr>
+								<p>Use your unique referral link to advertise FXTM to your family and friends online. From social media channels to emails and financial forums; the wider you spread the word about FXTM, the bigger your chances are to get approved referrals and earn some extra money.</p>
+								<!-- <br> -->
+								<img style="width: 100%; height:100%;" src="../static/media/images/ad2.png">
+								<br>
+								<br>
+							</div>
+						</div>
+					</div>
+				{% endblock %}
+				<footer>
+					<p>&copy; FXTM 2011-2024</p>
+					<p>FXTM is a regulated brand name of Exinity Limited, regulated by the Financial Services Commission of the Republic of Mauritius with license number C113012295. Card transactions are processed by Exinity Works (CY) Limited, registered number HE 351684 and registered/business address at Exinity Tower, 35 Lamporu Konstantara, Kato Polemidia, Limassol, 4156, Cyprus. Address for cardholder correspondence: backoffice@fxtm.com.</p>
+				</footer>
+			</div>	
+			
+		</section>
+
+	{% endif %}
+</body>
+</html>

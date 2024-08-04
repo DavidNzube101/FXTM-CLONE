@@ -1,0 +1,30 @@
+{% extends "Dashboard.html" %}
+{% block title %} Transaction History - MyFXTM Dashboard {% endblock %}
+
+{% block maincontent %}
+
+	<h1 style="font-size: 50px; margin-left: 10px;">Transaction History</h1>
+	<div style="margin-left: 30px;">
+		<div class="board-box">
+			<h2>Transaction History</h2>
+			<hr>
+			<div>
+				{% if TransactionHistory %}
+					<ol>
+						{% for th in TransactionHistory %}
+							<li>{{ th['datestamp'] }} - {{ th['amount'] }} - {{ th['timestamp'] }} </li>
+						{% endfor %}
+					</ol>
+				{% else %}
+					<br>
+					<p align="center">No Transactions yet!</p>
+				{% endif %}
+			</div>
+			<br>
+			<a href="/deposit-funds">
+				<button>Fund MyFXTM Wallet</button>
+			</a>
+		</div>
+	</div>
+
+{% endblock %}

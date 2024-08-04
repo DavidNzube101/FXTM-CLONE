@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FXTM | Access Global Financial Markets</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/landing_stylesheet.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+{% if DeviceType == "Mobile" %}
+	<body>
+		<header>
+			<img src="../static/media/images/logo-text.png">
+		</header>
+
+		<section id="hero" class="page-section">
+			<h3 align="center" style="font-family: 'Source Sans 3'; font-weight: 600; font-style: normal; color: rgb(255, 255, 255); font-size: 30px;">Your access to the global<br>financial markets</h3>
+
+			<p align="center" style="color: rgb(255, 255, 255); font-family: 'Source Sans 3'; font-weight: 300; font-style: normal; font-size: 20px;">Invest in hundreds of US stocks<br>commission free&nbsp;</p>
+
+			<div class="empty-container">
+				<a class="link-button" href="#register" style="text-decoration: none;">Register Now</a>
+			</div>
+			<p align="center" style="color: rgb(255, 255, 255); font-family: 'Source Sans 3'; font-weight: 300; font-style: normal; font-size: 13px;">Minimum Deposit $200 to open an account </p>
+
+			<div class="empty-container">
+				<div class="auth-box" id="register">
+					<div class="auth-tabs">
+						<div class="tab" id="register-tab">Registeration</div>
+						<div class="tab" id="login-tab">&nbsp;&nbsp;Log In&nbsp;&nbsp;</div>
+					</div>
+					<div class="auth-screens">
+						<form action="/signup" method="POST" class="auth-screen" id="register-screen">
+							<p style="color: red; font-family: 'Source Sans 3' sans-serif;" class="status_text" align="center">{{ status[0] }}</p>
+							<div class="input-container">
+								<input type="text" name="first_name" placeholder="First Name" class="input" autocomplete="off">
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<div class="input-container">
+								<input type="text" name="last_name" placeholder="Last Name" class="input" autocomplete="off">
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<div class="input-container">
+								<select id="countrySelect" class="input">
+									<option value="">Select a Country</option>
+								</select>
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<div class="input-container">
+								<input type="number" name="phone_number" placeholder="Phone Number" class="input" autocomplete="off">
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<div class="input-container">
+								<input type="email" name="email" placeholder="Email" class="input" autocomplete="off">
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<div class="input-container">
+								<input type="password" name="password" placeholder="Password" class="input" autocomplete="off">
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<div style="margin: 20px; width: fit-content; border: 2px solid transparent; display: flex; align-items: center; justify-content: space-around; padding: 20px;" id="geetest">
+								<div class="geetest_wait">
+									<span class="geetest_wait_dot geetest_dot_1"></span>
+								</div>
+								<p>&nbsp;</p>
+								<p>&nbsp;</p>
+								<p>&nbsp;</p>
+								<p class="geetest_class">Click to verify</p>
+							</div>
+							<div class="consent_container">
+								<input type="checkbox" name="consent_agree">
+								<p>I accept the terms of the <a href="https://register.fxtmng.com/policies-regulation/client-account-opening-agreements">Client Agreement</a></p>
+							</div>
+							<div class="consent_container">
+								<input type="checkbox" name="consent_agree">
+								<p>I give my consent for FXTM to contact me for marketing purposes. To learn more about how we collect and use your information, please read our <a href="https://register.fxtmng.com/policies-regulation/privacy-policy">Privacy Policy</a></p>
+							</div>
+							<div style="width: 100%; display: flex; align-items: center; justify-content: center;">
+								<button>Register now</button>
+							</div>
+							<br>
+							<div class="risks" style="color: #5f6062; width: 100%; display: grid; place-items: center;">
+								<small align="center" style="font-weight: 300; font-size: 13px;">Your capital is at risk.</small>
+								<small align="center" style="font-weight: 700; font-size: 13px;">Exinity Limited is regulated by the FSC (Mauritius)</small>
+							</div>
+							<br>
+						</form>
+						<form action="/login" method="POST" class="auth-screen" id="login-screen">
+							<div class="input-container">
+								<input type="email" name="email" placeholder="Email" class="input" autocomplete="off">
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<div class="input-container">
+								<input type="password" name="password" placeholder="Password" class="input" autocomplete="off">
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<p style="color: red;" align="center" class="status_text">{{ status[0] }}</p>
+							<div style="width: 100%; display: flex; align-items: center; justify-content: center;">
+								<button>Log In</button>
+							</div>
+							<br>
+							<div style="width: 100%; display: flex; align-items: center; justify-content: center;">
+								<a href="https://my.fxtmng.com/en/login/reset?site=global">Forgot password?</a>
+							</div>
+							<br>
+							<div class="risks" style="color: #5f6062; width: 100%; display: grid; place-items: center;">
+								<small align="center" style="font-weight: 300; font-size: 13px;">Your capital is at risk.</small>
+								<small align="center" style="font-weight: 700; font-size: 13px;">Exinity Limited is regulated by the FSC (Mauritius)</small>
+								<small align="center" style="font-weight: 700; font-size: 13px;">Exinity Capital is regulated by CMA (Kenya)</small>
+							</div>
+							<br>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="page-2" style="background: #252842; padding-top: 50px; border-block: 2px solid grey;">
+			<h2 align="center" style="font-family: 'Source Sans 3'; font-weight: 600; font-style: normal; color: rgb(255, 255, 255);">Discover a better<br>trading experience</h2>
+			<img src="../static/media/images/page-2-vertical.png" style="width: 100%;">
+		</section>
+		<section id="page-3" style="background: white;" class="page-vh">
+			<img src="../static/media/images/page-3-vertical.png" style="width: 100%;">
+		</section>
+		<section id="mid-page" class="page-vh">
+			<img src="../static/media/images/mid-page-vertical.png" style="width: 100%">
+		</section>
+		<section id="page-4" style="background: whitesmoke;" class="page-vh">
+			<img src="../static/media/images/page-4-vertical.png" style="width: 100%">
+		</section>
+		<section id="page-4-5" style="background: whitesmoke;" class="page-vh">
+			<img src="../static/media/images/page-4-5-vertical.png" style="width: 100%">
+		</section>
+		<section id="page-5" class="page-vh">
+			<img src="../static/media/images/page-5-vertical.png" style="width: 100%">
+		</section>
+		<section id="page-6" style="background: #1a1d30;" class="page-vh">
+			<img src="../static/media/images/page-6-vertical.png" style="width: 100%">
+		</section>
+		<section id="page-6-5" style="background: #1a1d30;" class="page-vh">
+			<img src="../static/media/images/page-6-5-vertical.png" style="width: 100%">
+		</section>
+
+
+	</body>
+
+{% else %}
+	<body>
+		<header style="justify-content: space-around;">
+			<img src="../static/media/images/logo-text-2.png" style="height: 30px; width: 70px;">
+			<h2>&nbsp;</h2>
+			<h2>&nbsp;</h2>
+		</header>
+
+		<section id="hero" class="page-section" style="background-size: cover; display: flex; align-items: center; justify-content: space-around; width:100%;">
+			<div>
+				<h2>&nbsp;</h2>
+			</div>
+			<div class="left-hero">
+				<h3 align="left" style="font-family: 'Source Sans 3'; font-weight: 600; width: 100%; font-style: normal; color: rgb(255, 255, 255); font-size: 60px;">Your access to the global<br>financial markets</h3>
+
+				<p align="left" style="color: rgb(255, 255, 255); font-family: 'Source Sans 3'; font-weight: 300; font-style: normal; font-size: 20px;">Trade hundreds of US stocks for low commissions&nbsp;</p>
+
+				<p align="left" style="color: rgb(255, 255, 255); font-family: 'Source Sans 3'; font-weight: 300; font-style: normal; font-size: 13px;">Minimum Deposit $200 to open an account </p>
+			</div>
+
+			<div class="empty-container right-hero">
+				<div class="auth-box" id="register">
+					<div class="auth-tabs">
+						<div class="tab" id="register-tab">Registeration</div>
+						<div class="tab" id="login-tab">&nbsp;&nbsp;Log In&nbsp;&nbsp;</div>
+					</div>
+					<div class="auth-screens">
+						<form action="/signup" method="POST" class="auth-screen" id="register-screen">
+							<p style="color: red; font-family: 'Source Sans 3' sans-serif;" class="status_text" align="center">{{ status[0] }}</p>
+							<div class="input-container">
+								<input type="text" name="first_name" placeholder="First Name" class="input" autocomplete="off">
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<div class="input-container">
+								<input type="text" name="last_name" placeholder="Last Name" class="input" autocomplete="off">
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<div class="input-container">
+								<select id="countrySelect" name="Country" class="input">
+									<option value="">Select a Country</option>
+								</select>
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<div class="input-container">
+								<input type="number" name="phone_number" placeholder="Phone Number" class="input" autocomplete="off">
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<div class="input-container">
+								<input type="email" name="email" placeholder="Email" class="input" autocomplete="off">
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<div class="input-container">
+								<input type="password" name="password" placeholder="Password" class="input" autocomplete="off">
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<div style="margin: 20px; width: fit-content; border: 2px solid transparent; display: flex; align-items: center; justify-content: space-around; padding: 20px;" id="geetest">
+								<div class="geetest_wait">
+									<span class="geetest_wait_dot geetest_dot_1"></span>
+								</div>
+								<p>&nbsp;</p>
+								<p>&nbsp;</p>
+								<p>&nbsp;</p>
+								<p class="geetest_class">Click to verify</p>
+							</div>
+							<div class="consent_container">
+								<input type="checkbox" name="consent_agree">
+								<p>I accept the terms of the <a href="https://register.fxtmng.com/policies-regulation/client-account-opening-agreements">Client Agreement</a></p>
+							</div>
+							<div class="consent_container">
+								<input type="checkbox" name="consent_agree">
+								<p>I give my consent for FXTM to contact me for marketing purposes. To learn more about how we collect and use your information, please read our <a href="https://register.fxtmng.com/policies-regulation/privacy-policy">Privacy Policy</a></p>
+							</div>
+							<div style="width: 100%; display: flex; align-items: center; justify-content: center;">
+								<button>Register now</button>
+							</div>
+							<br>
+							<div class="risks" style="color: #5f6062; width: 100%; display: grid; place-items: center;">
+								<small align="center" style="font-weight: 300; font-size: 13px;">Your capital is at risk.</small>
+								<small align="center" style="font-weight: 700; font-size: 13px;">Exinity Limited is regulated by the FSC (Mauritius)</small>
+							</div>
+							<br>
+						</form>
+						<form action="/login" method="POST" class="auth-screen" id="login-screen">
+							<div class="input-container">
+								<input type="email" name="email" placeholder="Email" class="input" autocomplete="off">
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<div class="input-container">
+								<input type="password" name="password" placeholder="Password" class="input" autocomplete="off">
+								<img src="https://my.fxtmng.com/en/identity/registration/assets/img/tooltip.svg">
+							</div>
+							<p style="color: red; font-family: 'Source Sans 3' sans-serif;" class="status_text" align="center">{{ status[0] }}</p>
+							<div style="width: 100%; display: flex; align-items: center; justify-content: center;">
+								<button>Log In</button>
+							</div>
+							<br>
+							<div style="width: 100%; display: flex; align-items: center; justify-content: center;">
+								<a href="https://my.fxtmng.com/en/login/reset?site=global">Forgot password?</a>
+							</div>
+							<br>
+							<div class="risks" style="color: #5f6062; width: 100%; display: grid; place-items: center;">
+								<small align="center" style="font-weight: 300; font-size: 13px;">Your capital is at risk.</small>
+								<small align="center" style="font-weight: 700; font-size: 13px;">Exinity Limited is regulated by the FSC (Mauritius)</small>
+								<small align="center" style="font-weight: 700; font-size: 13px;">Exinity Capital is regulated by CMA (Kenya)</small>
+							</div>
+							<br>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="page-2" style="background: #252842; padding-top: 50px; border-block: 2px solid grey;">
+			<img src="../static/media/images/page-2-horizontal.png" style="width: 100%;">
+		</section>
+		<section id="page-3" style="background: white;" class="page-vh">
+			<img src="../static/media/images/page-3-horizontal.png" style="width: 100%;">
+		</section>
+		<section id="mid-page" class="page-vh">
+			<img src="../static/media/images/mid-page-horizontal.png" style="width: 100%;">
+		</section>
+		<section id="page-4" style="background: whitesmoke;" class="page-vh">
+			<img src="../static/media/images/page-4-horizontal.png" style="width: 100%;">
+		</section>
+		<section id="page-5" class="page-vh">
+			<img src="../static/media/images/page-5-6-6-5-horizontal.png" style="width: 100%;">
+		</section>
+
+
+	</body>
+
+{% endif %}
+<script src="../static/js/index.js"></script>
+</html>

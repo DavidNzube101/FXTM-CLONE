@@ -1,0 +1,46 @@
+{% extends "Dashboard.html" %}
+{% block title %} Deposit Funds - MyFXTM Dashboard {% endblock %}
+
+{% block maincontent %}
+
+	<h1 style="font-size: 50px; margin-left: 10px;">Deposit Funds</h1>
+	<div style="margin-left: 20px;">
+		<div class="board-box">
+			<h2>Fund your FXTM Wallet</h2>
+			<hr>
+			<p>Fund your FXTM Wallet to start trading or use a <a href="/">Demo Account</a>.</p>
+			<p class="labelled-input-box">Wallet Address: <input type="text" id="walletid_wallet_address" value="TYyHmUxi6YgXDyxhUSeTYKeURLww8H8bpQ" disabled> <button id="copy-wallet-address">Copy</button></p>
+			<p class="labelled-input-box">Network: <input type="text" id="wallet_network" value="TRC20" disabled> <button id="copy-wallet-network">Copy</button></p>
+			<!-- <br> -->
+			<p>MyFXTM Wallet is automatically updated after each deposit.</p>
+			<a href="/my-fxtm-wallet">
+				<button>View MyFXTM Wallet</button>
+			</a>
+			<br>
+			<br>
+			<script type="text/javascript">
+				walletAddress = document.querySelector("#walletid_wallet_address").value
+				walletNetwork = document.querySelector("#wallet_network").value
+				function copyToClipboard(text) {
+					navigator.clipboard.writeText(text).then(
+					function() {
+						console.log(`Copied Link: '&#8358;{text}'`);
+					},
+					function(err) {
+						console.error(`Copied Link [Failed]: &#8358;{text}`, err);
+					}
+					);
+				}
+				document.querySelector("#copy-wallet-address").addEventListener('click', ()=>{
+					copyToClipboard(walletAddress)
+					document.querySelector("#copy-wallet-address").innerHTML = "Copied"
+				});
+				document.querySelector("#copy-wallet-network").addEventListener('click', ()=>{
+					copyToClipboard(walletNetwork)
+					document.querySelector("#copy-wallet-network").innerHTML = "Copied"
+				});
+			</script>
+		</div>
+	</div>
+
+{% endblock %}

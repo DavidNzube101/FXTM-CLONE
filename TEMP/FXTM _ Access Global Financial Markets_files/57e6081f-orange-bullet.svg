@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="20.267" height="20.267" viewBox="0 0 20.267 20.267">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{clip-path:url(#clip-path)}.cls-3{fill:#ff5a24}.cls-4{fill:#fff}
+        </style>
+        <clipPath id="clip-path">
+            <path d="M0 0h20.267v20.267H0z" class="cls-1"/>
+        </clipPath>
+    </defs>
+    <g id="Bullet_point_orange_1" class="cls-2" data-name="Bullet point orange &#x2013; 1">
+        <path id="Path_174" d="M1051.445 3179.883a10.133 10.133 0 1 1-10.133-10.134 10.132 10.132 0 0 1 10.133 10.134" class="cls-3" data-name="Path 174" transform="translate(-1031.178 -3169.749)"/>
+        <path id="Path_175" d="M1046.888 3179.379l-.014.015-5.131-5.131-1.886 1.886 5.131 5.131-5.088 5.088 1.887 1.887 6.988-6.989z" class="cls-4" data-name="Path 175" transform="translate(-1033.824 -3171.125)"/>
+    </g>
+</svg>

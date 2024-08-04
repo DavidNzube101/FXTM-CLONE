@@ -1,0 +1,35 @@
+{% extends "Dashboard.html" %}
+{% block title %} Trading Accounts - MyFXTM Dashboard {% endblock %}
+
+{% block maincontent %}
+
+	<h1 style="font-size: 50px; margin-left: 10px;">Trading Accounts</h1>
+	<div style="margin-left: 30px;">
+		<div class="board-box">
+			<h2>Trading Accounts</h2>
+			<hr>
+			<div>
+				{% if TradingAccount %}
+					<ol>
+						{% for ta in TradingAccount %}
+							<li>{{ ta['name'] }}<br>{{ ta['account_id'] }}</li>
+						{% endfor %}
+					</ol>
+				{% else %}
+					<br>
+					<p align="center">No Accounts yet!</p>
+				{% endif %}
+			</div>
+			<br>
+			{% if CUser['wallet_balance'] == "0" %}
+				<button style="opacity: 0.6; cursor: not-allowed;" disabled>Create Trading Accounts</button>
+				<p>You can't create a trading account without funding your MyFXTM wallet. <a href="/deposit-funds">Fund now</a> or use <a href="/demo-account">demo account</a>.</p>
+			{% else %}
+				<a href="/create-trading-account">
+					<button>Create Trading Account</button>
+				</a>
+			{% endif %}
+		</div>
+	</div>
+
+{% endblock %}
